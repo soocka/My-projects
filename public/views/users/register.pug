@@ -1,0 +1,43 @@
+extends ../base.pug
+
+block content
+  .container.mt-5
+    form(method="post", role="form")
+      h1.text-center Créer un compte
+
+      .form-group
+        label(for="name") Prénom:*
+        input.form-control(type="text", id="name", name="firstName")
+
+      .form-group
+        label(for="name") Nom:*
+        input.form-control(type="text", id="name", name="lastName")
+
+      .form-group
+        label(for="date") Date de naissance:*
+        input.form-control(type="date", id="date", name="date")
+
+      .form-group
+        label(for="sex") Sexe:
+        div.form-check
+          input.form-check-input(type="radio", id="male", name="sex", value="1")
+          label.form-check-label(for="male") Masculin
+        div.form-check
+          input.form-check-input(type="radio", id="female", name="sex", value="0")
+          label.form-check-label(for="female") Féminin
+
+      .form-group
+        label(for="password") Mot de passe (8 caractères minimum):*
+        input.form-control(type="password", id="password", minlength="8", name="password")
+
+      .form-group
+        label(for="password") Confirmer votre mot de passe:*
+        input.form-control(type="password", id="password", minlength="8")
+
+      .form-group
+        label(for="mail") Adresse mail:*
+        input.form-control(type="email", id="mail", name="email")
+
+      .form-group.text-center.mt-4.mb-5
+        button.btn.btn-primary(type="submit") Créer mon compte
+

@@ -1,0 +1,33 @@
+{
+  "name": "t-web-501-lil_10",
+  "version": "1.0.0",
+  "description": "projet job_board",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpitechMscProPromo2026/T-WEB-501-LIL_10.git"
+  },
+  "author": "Elise S, Marine S",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EpitechMscProPromo2026/T-WEB-501-LIL_10/issues"
+  },
+  "homepage": "https://github.com/EpitechMscProPromo2026/T-WEB-501-LIL_10#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "jade": "^1.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.6.1",
+    "nodejs": "^0.0.0",
+    "pug": "^3.0.2"
+  }
+}

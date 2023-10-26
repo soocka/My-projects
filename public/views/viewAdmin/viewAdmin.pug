@@ -1,0 +1,114 @@
+extends ../base.pug
+
+block content
+  //- div.container
+  //-   table.table
+  //-     caption.table-caption Utilisateurs
+  //-     thead
+  //-       tr
+  //-         th Prénom
+  //-         th Nom de famille
+  //-         th Date de naissance
+  //-         th Genre
+  //-         th Adresse mail
+  //-         th Mot de passe
+  //-         th Administrateur
+  //-         th Action
+  //-     tbody
+  //-       tr
+  //-         td
+  //-         td
+  //-         td
+  //-         td
+  //-         td
+  //-         td
+  //-         td
+  //-         td
+  //-           div
+  //-             button.btn.btn-primary Modifier
+  //-             button.btn.btn-danger Supprimer
+
+  //-   div.text-center
+  //-     button.btn.btn-primary Créer
+
+  div.container
+
+    h5 Gérer les annonces
+    table.table
+      thead
+        tr
+          th ID
+          th Titre
+          th Description courte
+          th Description détaillée
+          th Date de publication
+          th Type de contrat
+          th Salaire
+          th Adresse
+          th Action
+      tbody
+        each advertisement, index in advertisementsList
+          tr
+            td= advertisement.AdvertisementID
+            td= advertisement.Title
+            td= advertisement.Description
+            td= advertisement.Full_description
+            td= advertisement.PostedDate
+            td= advertisement.Type
+            td= advertisement.Wages
+            td= advertisement.Place
+            td
+              div 
+                a(href=`/advertisements/update/${advertisement.AdvertisementID}`, class="btn btn-primary") Modifier
+                button.btn.btn-danger.btnDelete(data-id=advertisement.AdvertisementID) Supprimer
+
+  div.text-center
+  a(href="/advertisements/create") Créer
+
+  script(src="/js/viewAdmin.js")
+
+  //- div.container
+  //-   table.table
+  //-     caption.table-caption Entreprises partenaires
+  //-     thead
+  //-       tr
+  //-         th Nom de l'entreprise
+  //-         th Domaine
+  //-         th Description
+  //-         th Action
+  //-     tbody
+  //-       tr
+  //-         td
+  //-         td
+  //-         td
+  //-         td
+  //-           div
+  //-             button.btn.btn-primary Modifier
+  //-             button.btn.btn-danger Supprimer
+
+  //-   div.text-center
+  //-     button.btn.btn-primary Créer
+
+  //- div.container
+  //-   table.table
+  //-     caption.table-caption Candidatures
+  //-     thead
+  //-       tr
+  //-         th Nom du candidat
+  //-         th Date de candidature
+  //-         th Titre de l'annonce
+  //-         th Description
+  //-         th Action
+  //-     tbody
+  //-       tr
+  //-         td
+  //-         td
+  //-         td
+  //-         td
+  //-         td
+  //-           div
+  //-             button.btn.btn-primary Modifier
+  //-             button.btn.btn-danger Supprimer
+
+  //-   div.text-center
+  //-     button.btn.btn-primary Créer

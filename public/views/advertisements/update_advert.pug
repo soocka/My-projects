@@ -1,0 +1,40 @@
+extends ../base.pug
+
+block content
+  div.container
+    div.form-group.mb-3.text-center
+      h1.text-decoration-underline.mb-5 Modifier une annonce
+    form.bg-light(id="update_advert")
+      div.form-group.mb-3
+        label(for="title") Titre de l'annonce:
+        input(type="text" class="form-control" id="title" value=advertisement.Title)
+      div.form-group.mb-3
+        label(for="companies") Liste des entreprises
+        select(name="companies" id="companies" class="form-control") 
+          each company in companiesList 
+            if company.CompanyID == companyID
+              option(value=company.CompanyID selected) #{company.Name}
+            else 
+              option(value=company.CompanyID) #{company.Name}
+      div.form-group.mb-3
+        label(for="wages") Salaire:
+        input(type="text" class="form-control" id="wages" value=advertisement.Wages)
+      div.form-group.mb-3
+        label(for="place") Lieu:
+        input(type="text" class="form-control" id="place" value=advertisement.Place)
+      div.form-group.mb-3
+        label(for="short-description") Courte description du poste:
+        textarea(name="short-description" cols="30" rows="10" class="form-control" id="short-description") #{advertisement.Description}
+        label(for="long-description") Longue description du poste:
+        textarea(name="long-description" cols="30" rows="10" class="form-control" id="long-description") #{advertisement.Full_description}
+      div.form-group.mb-3
+        label(for="type") Type de contrat:
+        input(type="text" class="form-control" id="type" value=advertisement.Type)
+      div.form-group.mb-3
+        label(for="date") Date du jour:
+        input(type="date" class="form-control" id="date" value=date)
+      div.text-center.mb-3
+        button.btn.btn-primary Modifier l'annonce
+
+  script(src="/js/update_advert.js")
+

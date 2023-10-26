@@ -1,0 +1,35 @@
+extends ../base.pug
+
+block content
+  .container
+
+    h1.text-center.text-decoration-underline.mb-5.mt-4="Annonces"
+    each advertisement, index in advertisementsList
+      
+      .bg-light.bg-gradient.p-3.mb-4.mt-4
+        h2.mb-5.text-center= advertisement.Title
+        p.short-description= advertisement.Description
+        .d-flex.justify-content-end
+
+        button.button.btn.btn-primary.btn-show-more(data-bs-toggle="modal", data-bs-target=`#myModal-${index}`) Afficher plus
+
+        a.needLogIn.btn.btn-secondary.btn-block(href="/users/login") Se connecter pour postuler
+
+        .modal(id=`myModal-${index}`, tabindex="-1")
+          .modal-dialog
+            .modal-content
+              .modal-header.text-center
+                h5.modal-title=advertisement.Title
+                button(type="button", class="btn-close", data-bs-dismiss="modal", aria-label="Fermer")
+              .modal-body=advertisement.Full_description
+              .modal-body.fw-bolder=advertisement.Type
+              .modal-body.fw-bolder=advertisement.Wages
+              .modal-body.fw-bolder=advertisement.Place
+              .modal-body.fst-italic.fs-6=advertisement.PostedDate
+              p.long-description-content
+
+              .modal-footer
+                button(type="button", class="btn btn-secondary", data-bs-dismiss="modal") Fermer
+                a(href=`/job_applications/${advertisement.AdvertisementID}`, class="btn btn-primary") Postuler
+
+  script(src="/js/advertisements.js")
